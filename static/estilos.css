@@ -417,3 +417,88 @@ body{background:var(--cream);color:var(--ink);font-family:Inter,"Segoe UI",Arial
 .form-card,.book-card,.empty-state{background:#fffdfa;color:var(--ink);border-radius:20px;box-shadow:0 6px 22px #33321d16;border:1px solid #e8e2da}.badge-category{background:#e2e5d9;color:#48503f}.price-tag{color:#48503f}.honey-nav{background:var(--sage-dark)}footer{color:#777d6c}
 @media(max-width:767px){.monday-hero{min-height:500px;align-items:flex-start;padding:34px 24px}.hero-copy{padding-left:18px}.hero-art{width:100%;height:48%;top:auto;bottom:0;opacity:.9}.notebook{width:145px;height:195px;top:30px}.notebook-back{left:28%}.notebook-front{left:43%;top:40px;font-size:1rem}.pen-cup{width:80px;height:90px;right:7%}.pen-cup i{height:115px;margin-top:-35px;width:9px}.hero-spark{font-size:2.5rem}.section-heading{gap:10px}.section-heading h2{font-size:1.25rem}.section-heading a{font-size:.78rem}.product-image-wrap{height:130px}.reservation-banner{justify-content:space-between;padding:15px}.reservation-banner h2{font-size:1rem}.reservation-banner p{font-size:.78rem}.reservation-star{display:none}.reservation-clock{font-size:1.3rem;padding:8px 12px}.reservation-clock strong{font-size:1.3rem}}
 @media print{.monday-nav,footer,.btn,.alert{display:none!important}body{background:white}.page-shell{max-width:100%}}
+
+
+/* Identidad unificada Papelería: catálogo y administración en verde salvia */
+:root {
+  --sage: #858b78;
+  --sage-dark: #41483c;
+  --sage-soft: #c9cbbb;
+  --sage-pale: #e6e9df;
+  --cream: #f5f0e9;
+  --ink: #34392f;
+  --line: #d8dccf;
+}
+body { background: var(--cream); color: var(--ink); }
+.monday-nav { background: var(--sage-dark); }
+.monday-brand { letter-spacing: 2px; }
+.monday-brand span { font-size: 1.35rem; }
+.monday-brand small { letter-spacing: 1.5px; }
+.hero, .admin-hero, .catalog-hero {
+  color: var(--ink);
+  background: linear-gradient(125deg, #e6e8df 0%, #d1d5c8 55%, #f1eae3 100%);
+  border: 1px solid #dce0d4;
+  border-radius: 22px;
+  box-shadow: 0 7px 22px rgba(65,72,60,.08);
+}
+.hero h1, .section-title { color: var(--sage-dark); font-weight: 800; }
+.form-card, .book-card, .empty-state, .cart-line, .promo-card {
+  background: #fffdfa !important;
+  color: var(--ink) !important;
+  border: 1px solid #e2e4db !important;
+  border-radius: 20px;
+  box-shadow: 0 6px 22px rgba(65,72,60,.09) !important;
+}
+.form-card { padding: 1.5rem; }
+.form-label { color: #505748; font-weight: 650; }
+.form-control, .form-select {
+  color: var(--ink);
+  background: #fffefa;
+  border: 1px solid #d4d9cb;
+  border-radius: 12px;
+}
+.form-control:focus, .form-select:focus {
+  border-color: #858f78;
+  box-shadow: 0 0 0 .2rem rgba(133,143,120,.18);
+}
+.btn-sage, .btn-honey {
+  background: var(--sage-dark) !important;
+  border: 1px solid var(--sage-dark) !important;
+  color: #fff !important;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: .65rem 1.2rem;
+}
+.btn-sage:hover, .btn-honey:hover {
+  background: #626b59 !important;
+  border-color: #626b59 !important;
+  color: #fff !important;
+}
+.badge-category { background: #e4e8dd !important; color: #4c5545 !important; }
+.price-tag { color: #48503f !important; font-weight: 800; }
+.merch-placeholder, .promo-placeholder {
+  background: linear-gradient(135deg, #e3e7dc, #c5ccbb) !important;
+  color: #58614f;
+}
+.merch-cover { background: #e8e9e1; }
+.catalog-card { overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+.catalog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(65,72,60,.14) !important; }
+.catalog-card h2 { color: var(--sage-dark); font-weight: 750; }
+.catalog-card p { color: #62695b; }
+.search-bar { background: #e8eae2; padding: 12px; border-radius: 16px; }
+.admin-panel { margin-bottom: 1.25rem; }
+.admin-panel h2 { color: var(--sage-dark); }
+.admin-row { color: var(--ink) !important; border-bottom: 1px solid var(--line) !important; padding: 1.15rem 0; }
+.admin-row strong { color: #3e4738; font-size: 1.05rem; }
+.admin-row .small, .admin-row .text-secondary { color: #727968 !important; }
+.admin-edit-summary { color: #59634f !important; }
+.admin-edit-summary:hover { color: #30392d !important; }
+.btn-delete-book { background: #f5e6e2 !important; color: #8a4c43 !important; border: 1px solid #e4c7c0 !important; border-radius: 999px; font-weight: 700; padding: .55rem 1rem; }
+.btn-delete-book:hover { background: #edd5ce !important; color: #743b34 !important; }
+.empty-state { color: var(--ink) !important; }
+footer { color: #777d6c !important; }
+@media (max-width: 767px) {
+  .admin-row { flex-direction: column; align-items: stretch !important; }
+  .admin-row > form { align-self: flex-start; }
+  .form-card { padding: 1rem !important; }
+}
