@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <section class="form-card p-4 p-md-5">
+      <h1 class="section-title">Confirmar compra</h1>
+      <p class="text-secondary">Revisa tu reserva y confirma antes de que termine el contador.</p>
+      <div class="alert alert-info">Actividad escolar: esta confirmación registra la compra en MongoDB. No se realiza ningún cobro ni necesitas ingresar datos bancarios.</div>
+      <form method="post" class="row g-3">
+        <div class="col-12">
+          <label class="form-label" for="direccion">Dirección de entrega</label>
+          <textarea id="direccion" name="direccion" class="form-control" rows="3" required placeholder="Escribe una dirección de prueba"></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-honey" type="submit">Confirmar compra</button>
+          <a class="btn btn-outline-secondary" href="{{ url_for('ver_carrito') }}">Volver al carrito</a>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
+{% endblock %}

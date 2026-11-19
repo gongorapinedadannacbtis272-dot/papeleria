@@ -1,0 +1,27 @@
+HAPPY PAPELERIA - INSTRUCCIONES RAPIDAS
+
+1. Extrae Happy.zip.
+2. Abre la carpeta Happy en Visual Studio Code.
+3. En Terminal ejecuta:
+   py -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+4. Configura MongoDB y las variables:
+   MONGO_URI = cadena de MongoDB Atlas
+   SECRET_KEY = clave privada larga
+   ADMIN_EMAIL = correo que sera administrador
+   ADMIN_PASSWORD = contrasena segura
+   RESERVA_SEGUNDOS = 300
+   APP_BASE_URL = http://127.0.0.1:5000
+
+5. Inicia:
+   .\.venv\Scripts\python.exe app.py
+
+6. Abre http://127.0.0.1:5000
+
+Crea una cuenta con el correo indicado en ADMIN_EMAIL para obtener acceso de administracion.
+Las demas cuentas se registran como clientes.
+La reserva dura 5 minutos y el comprobante QR aparece despues de confirmar la compra.
+
+La compra es una demostracion escolar: no realiza cobros reales.
+Consulta README.md para todos los detalles.

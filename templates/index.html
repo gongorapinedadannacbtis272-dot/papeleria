@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<section class="monday-hero mb-4">
+  <div class="hero-copy"><span class="eyebrow">PAPELERÍA · ORGANIZACIÓN · CREATIVIDAD</span><h1>Todo para<br>crear en<br><strong>HAPPY</strong></h1><p>Papelería, organización y creatividad<br class="d-none d-md-block"> en un solo lugar.</p><a class="btn btn-monday" href="{{ url_for('ver_merch') }}">Explorar catálogo <span>→</span></a></div>
+  <div class="hero-art" aria-hidden="true"><div class="art-circle"></div><div class="notebook notebook-back"></div><div class="notebook notebook-front"><span>GOOD<br>THINGS</span><b>♥</b></div><div class="pen-cup"><i></i><i></i><i></i><i></i><i></i></div><span class="hero-spark">♡</span></div>
+</section>
+<div class="section-heading mb-3"><h2>Productos destacados</h2><span class="heading-line"></span><a href="{{ url_for('ver_merch') }}">Ver todo el catálogo →</a></div>
+<div class="row g-3 featured-grid">
+{% for item in productos %}
+  <div class="col-6 col-md-4 col-lg-3"><article class="product-tile h-100">
+    <a class="product-image-wrap" href="{{ url_for('ver_merch') }}">{% if item.get('imagen_id') %}<img src="{{ url_for('imagen_merch',id=item._id) }}" alt="{{ item.nombre }}">{% else %}<div class="product-placeholder">{% if 'plum' in item.nombre|lower %}🖊️{% elif 'color' in item.nombre|lower %}🖍️{% elif 'libret' in item.nombre|lower or 'cuaderno' in item.nombre|lower %}📓{% elif 'cinta' in item.nombre|lower %}🎀{% else %}✏️{% endif %}</div>{% endif %}</a>
+    <div class="product-info"><span class="product-type">{{ item.get('tipo','Papelería') }}</span><h3>{{ item.nombre }}</h3><p class="product-price">${{ '%.2f'|format(item.precio) }} MXN</p>
+    {% if item.stock > 0 %}<form method="post" action="{{ url_for('agregar_carrito',id=item._id) }}"><button class="btn btn-monday w-100">Reservar 5 minutos</button></form>{% else %}<button class="btn btn-secondary w-100" disabled>Agotado</button>{% endif %}</div>
+  </article></div>
+{% else %}<div class="col-12"><div class="empty-state text-center p-5"><h3>¡Próximamente!</h3><p>El administrador puede agregar productos desde el panel.</p><a class="btn btn-monday" href="{{ url_for('ver_merch') }}">Ir al catálogo</a></div></div>{% endfor %}
+</div>
+<section class="reservation-banner mt-4"><span class="reservation-star">✧</span><div><h2>Reserva tus productos</h2><p>Tienes 5 minutos para completar tu compra.</p></div><div class="reservation-clock">◷ <strong>05:00</strong></div><span class="reservation-star">✧</span></section>
+{% endblock %}
